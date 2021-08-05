@@ -1,11 +1,6 @@
 from logging import error
 import pickle
 import streamlit as st 
-import numpy as np 
-import pandas as pd
-from pydantic.main import BaseModel
-from sklearn.linear_model import LogisticRegression
-
 
 loaded_model = pickle.load(open('LR movie new.pkl', 'rb'))
 loaded_tfidf = pickle.load(open('tf_idf movie.pkl','rb')) 
