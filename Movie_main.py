@@ -3,7 +3,7 @@ import pickle
 import streamlit as st 
 
 loaded_model = pickle.load(open('LR movie new.pkl', 'rb'))
-loaded_tfidf = pickle.load(open('tf_idf movie.pkl','rb')) 
+loaded_countvec = pickle.load(open('countvec movie.pkl','rb')) 
 
 def UI_Page():
     st.title("Movie Review Sentiment Analysis") 
@@ -15,7 +15,7 @@ def UI_Page():
             return None
         try:
             review = [review] 
-            review = loaded_tfidf.transform(review).toarray() 
+            review = loaded_countvec.transform(review).toarray() 
             result = loaded_model.predict(review) 
             if result[0] == 1:
                 st.success("The review is positive") 
