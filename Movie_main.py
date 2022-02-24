@@ -3,7 +3,7 @@ import pickle
 import streamlit as st 
 
 loaded_model = pickle.load(open('LR movie new.pkl', 'rb'))
-loaded_countvec = pickle.load(open('countvec movie.pkl','rb')) 
+loaded_countvec = pickle.load(open('countvec_movie.pkl','rb')) 
 
 def UI_Page():
     st.title("Movie Review Sentiment Analysis") 
